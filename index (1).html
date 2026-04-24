@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mineora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Epilogue:wght@300;400;500&family=Epilogue:ital,wght@1,300&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --black:   #0A0A0A;
+  --gray-1:  #1A1A1A;
+  --gray-2:  #4A4A4A;
+  --gray-3:  #8A8A8A;
+  --gray-4:  #C8C8C8;
+  --gray-5:  #E8E8E8;
+  --gray-6:  #F5F5F5;
+  --white:   #FFFFFF;
+
+  --serif:   'Playfair Display', Georgia, serif;
+  --sans:    'Epilogue', system-ui, sans-serif;
+
+  --max:     1080px;
+  --gutter:  clamp(1.5rem, 5vw, 4rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+/* ── FADE IN ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+.fade-1 { animation-delay: 0.05s; }
+.fade-2 { animation-delay: 0.15s; }
+.fade-3 { animation-delay: 0.25s; }
+.fade-4 { animation-delay: 0.38s; }
+.fade-5 { animation-delay: 0.52s; }
+
+/* ════════════════════════════
+   NAV
+════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 99;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--gray-5);
+  height: 58px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--gutter);
+}
+.nav-inner {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  line-height: 1;
+}
+.logo-top {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: 0.01em;
+}
+.logo-bottom {
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 400;
+  color: var(--gray-3);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--gray-2);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--black); }
+
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.btn-nav {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+  letter-spacing: 0.01em;
+}
+.btn-nav:hover { background: var(--gray-1); }
+.btn-nav-ghost {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  background: none;
+  color: var(--gray-2);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  padding: 0.45rem 0;
+  transition: color 0.15s;
+}
+.btn-nav-ghost:hover { color: var(--black); }
+
+/* ════════════════════════════
+   HERO
+════════════════════════════ */
+.hero {
+  padding-top: calc(58px + 7rem);
+  padding-bottom: 7rem;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.hero-kicker {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--gray-3);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero-kicker::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gray-3);
+}
+
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  max-width: 820px;
+  margin-bottom: 2.5rem;
+}
+.hero-headline em {
+  font-style: italic;
+  color: var(--gray-2);
+}
+
+.hero-body-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+.hero-sub {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--gray-2);
+  max-width: 440px;
+}
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.btn-primary {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.01em;
+}
+.btn-primary:hover { background: var(--gray-1); }
+.btn-secondary {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--gray-3);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  letter-spacing: 0.02em;
+  transition: color 0.15s;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.btn-secondary:hover { color: var(--black); }
+.btn-secondary .arrow { transition: transform 0.15s; }
+.btn-secondary:hover .arrow { transform: translateX(3px); }
+
+.hero-divider {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  border: none;
+  border-top: 1px solid var(--gray-5);
+}
+
+/* ════════════════════════════
+   STATS STRIP
+════════════════════════════ */
+.stats-strip {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 3.5rem var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  border-bottom: 1px solid var(--gray-5);
+}
+.stat-n {
+  font-family: var(--serif);
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--black);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.stat-n sup {
+  font-size: 1rem;
+  vertical-align: super;
+  font-family: var(--sans);
+  font-weight: 300;
+  letter-spacing: 0;
+}
+.stat-label {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--gray-3);
+  line-height: 1.5;
+  max-width: 160px;
+}
+
+/* ════════════════════════════
+   SECTION STRUCTURE
+════════════════════════════ */
+section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 5rem var(--gutter);
+}
+.section-border { border-bottom: 1px solid var(--gray-5); }
+
+.section-label {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--gray-3);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--gray-4);
+}
+
+.section-heading {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  max-width: 580px;
+  margin-bottom: 3rem;
+}
+.section-heading em { font-style: italic; color: var(--gray-2); }
+
+/* ════════════════════════════
+   PORTFOLIO
+════════════════════════════ */
+.portfolio-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.portfolio-note {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--gray-3);
+  max-width: 280px;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.mine-table { width: 100%; border-collapse: collapse; }
+.mine-table thead tr { border-bottom: 1px solid var(--gray-4); }
+.mine-table thead th {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-3);
+  padding: 0 0 0.85rem 0;
+  text-align: left;
+  white-space: nowrap;
+}
+.mine-table thead th:last-child { text-align: right; }
+
+.mine-row {
+  border-bottom: 1px solid var(--gray-5);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.mine-row:hover { background: var(--gray-6); }
+.mine-row td {
+  padding: 1.4rem 0;
+  vertical-align: middle;
+}
+.mine-row td:first-child { padding-left: 0; }
+.mine-row td:last-child { padding-right: 0; text-align: right; }
+
+.mine-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--black);
+  letter-spacing: -0.01em;
+  display: block;
+}
+.mine-location {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--gray-3);
+  display: block;
+  margin-top: 3px;
+  letter-spacing: 0.01em;
+}
+.mine-mineral {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--gray-2);
+  letter-spacing: 0.02em;
+}
+.mine-grade {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.01em;
+}
+.mine-grade-unit {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--gray-3);
+  margin-left: 2px;
+}
+.mine-price {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--black);
+}
+.mine-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-3);
+  border: 1px solid var(--gray-4);
+  border-radius: 2px;
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.5rem;
+}
+.mine-arrow-cell {
+  color: var(--gray-4);
+  font-size: 0.9rem;
+  transition: color 0.15s, transform 0.15s;
+  display: inline-block;
+}
+.mine-row:hover .mine-arrow-cell { color: var(--black); transform: translateX(3px); }
+
+/* ════════════════════════════
+   PROCESS
+════════════════════════════ */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem 2rem;
+}
+.process-n {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--gray-5);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+.process-title {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
+}
+.process-desc {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--gray-3);
+  line-height: 1.75;
+}
+
+/* ════════════════════════════
+   TWO-COL SPLIT
+════════════════════════════ */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.split-body {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--gray-2);
+  line-height: 1.8;
+}
+.split-body p + p { margin-top: 1.25rem; }
+.split-body strong { font-weight: 500; color: var(--black); }
+
+.feature-list { list-style: none; margin-top: 2rem; }
+.feature-list li {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--gray-5);
+  align-items: flex-start;
+}
+.feature-list li:last-child { border-bottom: 1px solid var(--gray-5); }
+.feature-num {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--gray-4);
+  letter-spacing: 0.1em;
+  padding-top: 3px;
+  flex-shrink: 0;
+  width: 20px;
+}
+.feature-title {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.01em;
+}
+.feature-desc {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--gray-3);
+  line-height: 1.65;
+}
+
+/* ════════════════════════════
+   CTA
+════════════════════════════ */
+.cta-block {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 5rem var(--gutter) 6rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--gray-5);
+}
+.cta-heading {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  max-width: 480px;
+}
+.cta-heading em { font-style: italic; color: var(--gray-2); }
+.cta-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+}
+.cta-note {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--gray-3);
+  letter-spacing: 0.01em;
+}
+
+/* ════════════════════════════
+   FOOTER
+════════════════════════════ */
+footer {
+  border-top: 1px solid var(--gray-5);
+  padding: 2.5rem var(--gutter);
+  background: var(--white);
+}
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.footer-logo-text {
+  font-family: var(--serif);
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--black);
+  text-decoration: none;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--gray-3);
+  text-decoration: none;
+  transition: color 0.15s;
+  letter-spacing: 0.01em;
+}
+.footer-links a:hover { color: var(--black); }
+.footer-legal {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--gray-4);
+  letter-spacing: 0.02em;
+}
+
+/* ════════════════════════════
+   BRAND / DESIGN SYSTEM SECTION
+════════════════════════════ */
+.design-chapter {
+  border-top: 1px solid var(--gray-5);
+  background: var(--gray-6);
+  padding: 4rem var(--gutter);
+}
+.design-chapter-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.design-chapter-label {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gray-3);
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.design-chapter-label::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--gray-4);
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.logo-showcase {
+  background: var(--white);
+  border: 1px solid var(--gray-5);
+  border-radius: 6px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  gap: 1rem;
+}
+.logo-showcase.on-black { background: var(--black); border-color: var(--black); }
+.logo-showcase.on-gray  { background: var(--gray-6); border-color: var(--gray-5); }
+
+.cmc-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.cmc-monogram { width: 36px; height: 36px; flex-shrink: 0; }
+.cmc-wordstack { display: flex; flex-direction: column; gap: 1px; }
+.cmc-name {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+.cmc-sub {
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 400;
+  color: var(--gray-3);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.logo-showcase.on-black .cmc-name { color: var(--white); }
+.logo-showcase.on-black .cmc-sub  { color: rgba(255,255,255,0.4); }
+
+.logo-variant-label {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--gray-3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.logo-showcase.on-black .logo-variant-label { color: rgba(255,255,255,0.25); }
+
+.swatch-row { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.swatch { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+.swatch-block { width: 72px; height: 48px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.06); }
+.swatch-name { font-family: var(--sans); font-size: 0.68rem; font-weight: 400; color: var(--gray-2); }
+.swatch-hex  { font-family: var(--sans); font-size: 0.62rem; font-weight: 300; color: var(--gray-3); }
+
+.type-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 2rem;
+  align-items: baseline;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--gray-5);
+}
+.type-meta {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--gray-3);
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+}
+.type-meta strong { display: block; color: var(--gray-2); margin-bottom: 2px; }
+
+.guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+.guide-card {
+  padding: 1.75rem;
+  background: var(--white);
+  border: 1px solid var(--gray-5);
+  border-radius: 6px;
+}
+.guide-card h3 {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.guide-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.guide-card ul li {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--gray-2);
+  line-height: 1.6;
+  display: flex;
+  gap: 0.5rem;
+}
+.guide-card ul li::before { content: '—'; color: var(--gray-4); flex-shrink: 0; }
+
+</style>
+</head>
+<body>
+
+<!-- ════════════ NAV ════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-top">Mineora</span>
+      <span class="logo-bottom">Mine Brokerage · Ontario, Canada</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/how-it-works">Process</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/signin" class="btn-nav-ghost">Sign in</a>
+      <a href="/contact" class="btn-nav">Request access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════ HERO ════════════ -->
+<div style="max-width:var(--max);margin:0 auto;padding:0 var(--gutter);">
+<div class="hero fade fade-1" style="padding-left:0;padding-right:0;max-width:none;">
+  <p class="hero-kicker fade fade-1">Active Portfolio — 10 Properties</p>
+  <h1 class="hero-headline fade fade-2">
+    Serious capital<br>meets <em>verified earth.</em>
+  </h1>
+  <div class="hero-body-row fade fade-3">
+    <p class="hero-sub">
+      We broker direct acquisitions of certified mining properties across Mexico — connecting qualified international buyers with verified mine owners.
+    </p>
+    <div class="hero-actions">
+      <a href="/portfolio" class="btn-primary">View portfolio <span>→</span></a>
+      <a href="/how-it-works" class="btn-secondary">How it works <span class="arrow">→</span></a>
+    </div>
+  </div>
+</div>
+<hr class="hero-divider fade fade-4">
+
+<!-- ════════════ STATS ════════════ -->
+<div class="stats-strip fade fade-5">
+  <div class="stat">
+    <div class="stat-n">10</div>
+    <div class="stat-label">Active properties available for acquisition</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">42<sup>g/t</sup></div>
+    <div class="stat-label">Peak gold grade — Mina Nikole, lab certified</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">$15B</div>
+    <div class="stat-label">Combined estimated gross asset value</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">10<sup>%</sup></div>
+    <div class="stat-label">Broker fee on all transactions</div>
+  </div>
+</div>
+</div>
+
+<!-- ════════════ PORTFOLIO ════════════ -->
+<section class="section-border">
+  <div class="portfolio-header">
+    <div>
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-heading" style="margin-bottom:0;">Active acquisitions<br><em>available now</em></h2>
+    </div>
+    <div class="portfolio-note">All properties require a signed NDA. Full documentation and pricing disclosed post-execution.</div>
+  </div>
+
+  <table class="mine-table">
+    <thead>
+      <tr>
+        <th style="width:34%">Property</th>
+        <th style="width:18%">Mineral</th>
+        <th style="width:18%">Key Metric</th>
+        <th style="width:14%">Stage</th>
+        <th style="width:12%">Asking</th>
+        <th style="width:4%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="mine-row">
+        <td>
+          <span class="mine-name">Mina Satevó</span>
+          <span class="mine-location">Satevó, Chihuahua · 1,040 ha</span>
+        </td>
+        <td><span class="mine-mineral">Lithium · Cs · Rb</span></td>
+        <td><span class="mine-grade">2,452 <span class="mine-grade-unit">ppm Li</span></span></td>
+        <td><span class="mine-mineral">Exploration</span></td>
+        <td><span class="mine-price">$24M</span></td>
+        <td><span class="mine-arrow-cell">→</span></td>
+      </tr>
+      <tr class="mine-row">
+        <td>
+          <span class="mine-name">Mina Nikole</span>
+          <span class="mine-location">Tamazula, Durango / Sinaloa · 2,186 ha</span>
+        </td>
+        <td><span class="mine-mineral">Gold · Silver · Cu</span></td>
+        <td><span class="mine-grade">42.25 <span class="mine-grade-unit">g/t Au</span></span></td>
+        <td><span class="mine-mineral">Phase 1</span></td>
+        <td><span class="mine-price">TBD <span class="mine-tag">NDA</span></span></td>
+        <td><span class="mine-arrow-cell">→</span></td>
+      </tr>
+      <tr class="mine-row">
+        <td>
+          <span class="mine-name">Zahav Tov</span>
+          <span class="mine-location">Mulatos District, Sonora · 150 ha</span>
+        </td>
+        <td><span class="mine-mineral">Gold · Silver</span></td>
+        <td><span class="mine-grade">82,453 <span class="mine-grade-unit">oz Au</span></span></td>
+        <td><span class="mine-mineral">Development</span></td>
+        <td><span class="mine-price">$33M</span></td>
+        <td><span class="mine-arrow-cell">→</span></td>
+      </tr>
+      <tr class="mine-row">
+        <td>
+          <span class="mine-name">Mina Maguarichi</span>
+          <span class="mine-location">Maguarichi, Chihuahua</span>
+        </td>
+        <td><span class="mine-mineral">Gold · Silver</span></td>
+        <td><span class="mine-grade">Royalty <span class="mine-grade-unit">structure</span></span></td>
+        <td><span class="mine-mineral">Active — LOI</span></td>
+        <td><span class="mine-price">TBD <span class="mine-tag">NDA</span></span></td>
+        <td><span class="mine-arrow-cell">→</span></td>
+      </tr>
+      <tr class="mine-row">
+        <td>
+          <span class="mine-name">Los Crestones</span>
+          <span class="mine-location">Badiraguato, Sinaloa</span>
+        </td>
+        <td><span class="mine-mineral">Gold · Silver</span></td>
+        <td><span class="mine-grade">NI 43-101 <span class="mine-grade-unit">certified</span></span></td>
+        <td><span class="mine-mineral">Exploration</span></td>
+        <td><span class="mine-price">TBD <span class="mine-tag">NDA</span></span></td>
+        <td><span class="mine-arrow-cell">→</span></td>
+      </tr>
+      <tr class="mine-row">
+        <td>
+          <span class="mine-name">Proyecto Baluarte</span>
+          <span class="mine-location">Concordia, Sinaloa–Durango</span>
+        </td>
+        <td><span class="mine-mineral">Gold · Silver</span></td>
+        <td><span class="mine-grade">5,959 <span class="mine-grade-unit">oz Au inferred</span></span></td>
+        <td><span class="mine-mineral">Exploration</span></td>
+        <td><span class="mine-price">TBD <span class="mine-tag">NDA</span></span></td>
+        <td><span class="mine-arrow-cell">→</span></td>
+      </tr>
+      <tr class="mine-row">
+        <td>
+          <span class="mine-name">La Sabila</span>
+          <span class="mine-location">Caracuaro, Michoacán · 174.5 ha</span>
+        </td>
+        <td><span class="mine-mineral">Gold · Silver · Cu</span></td>
+        <td><span class="mine-grade">954,000 <span class="mine-grade-unit">oz Au</span></span></td>
+        <td><span class="mine-mineral">Advanced</span></td>
+        <td><span class="mine-price">$60M</span></td>
+        <td><span class="mine-arrow-cell">→</span></td>
+      </tr>
+      <tr class="mine-row">
+        <td>
+          <span class="mine-name">El Centenario</span>
+          <span class="mine-location">Santiago Papasquiaro, Durango · 9,845 ha</span>
+        </td>
+        <td><span class="mine-mineral">Gold · Silver</span></td>
+        <td><span class="mine-grade">9,845 <span class="mine-grade-unit">ha · 2× NI 43-101</span></span></td>
+        <td><span class="mine-mineral">Exploration</span></td>
+        <td><span class="mine-price">TBD <span class="mine-tag">NDA</span></span></td>
+        <td><span class="mine-arrow-cell">→</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:1.75rem;display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-family:var(--sans);font-size:0.75rem;font-weight:300;color:var(--gray-3);">Showing 8 of 10 properties</span>
+    <a href="/portfolio" class="btn-secondary">View full portfolio <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- ════════════ PROCESS ════════════ -->
+<section class="section-border">
+  <div class="section-label">Process</div>
+  <h2 class="section-heading">Four steps from<br><em>interest to closing.</em></h2>
+
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="process-n">01</div>
+      <div class="process-title">Execute NDA</div>
+      <div class="process-desc">Sign our standard Non-Disclosure &amp; Non-Circumvention Agreement via DocuSign. Takes under five minutes.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-n">02</div>
+      <div class="process-title">Receive full package</div>
+      <div class="process-desc">Access the complete information memorandum — geology, lab results, financials, concession status, and asking price.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-n">03</div>
+      <div class="process-title">Site visit &amp; due diligence</div>
+      <div class="process-desc">We facilitate a supervised property visit and direct introduction to the mine owner's technical team.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-n">04</div>
+      <div class="process-title">Offer &amp; close</div>
+      <div class="process-desc">Submit a binding offer. We manage all negotiations, documentation, and coordinate to final closing.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ WHY US ════════════ -->
+<section class="section-border">
+  <div class="split">
+    <div>
+      <div class="section-label">Why us</div>
+      <h2 class="section-heading">Built for<br><em>serious buyers.</em></h2>
+      <div class="split-body">
+        <p>
+          Most mining brokers are informal, unstructured, and operate without proper legal frameworks. We operate differently — every transaction is governed by Ontario law, every property is documented, and every claim is lab-certified before it's shown to a buyer.
+        </p>
+        <p>
+          <strong>1000175534 Ontario Ltd.</strong> holds exclusive or semi-exclusive broker agreements with owners across Mexico. We don't list rumours — we list properties with concession titles, assay certificates, and signed agreements in place.
+        </p>
+      </div>
+    </div>
+    <div>
+      <ul class="feature-list">
+        <li>
+          <div class="feature-num">01</div>
+          <div class="feature-text">
+            <div class="feature-title">Legal infrastructure — already done</div>
+            <div class="feature-desc">NDA, Broker Agreement, and Non-Circumvention clause before any confidential data is shared. Ontario law governed.</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-num">02</div>
+          <div class="feature-text">
+            <div class="feature-title">Lab-certified data only</div>
+            <div class="feature-desc">Every grade in our portfolio is backed by a certificate from an independent accredited laboratory — not seller representations.</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-num">03</div>
+          <div class="feature-text">
+            <div class="feature-title">Exclusive access</div>
+            <div class="feature-desc">Most properties are not publicly listed. We hold exclusive agreements that give buyers protected access to off-market opportunities.</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-num">04</div>
+          <div class="feature-text">
+            <div class="feature-title">Canadian counterparty</div>
+            <div class="feature-desc">Incorporated in Ontario, regulated under Canadian law — giving international buyers a stable, trusted North American intermediary.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ CTA ════════════ -->
+<div class="cta-block">
+  <div class="cta-heading">
+    Ready to see<br>what's <em>available?</em>
+  </div>
+  <div class="cta-right">
+    <p style="font-family:var(--sans);font-size:0.88rem;font-weight:300;color:var(--gray-2);line-height:1.7;max-width:320px;">Start with an NDA. We'll send you the full portfolio within 24 hours — pricing, grades, and deal structure for every active property.</p>
+    <a href="/contact" class="btn-primary" style="margin-top:0.5rem;">Request full portfolio →</a>
+    <p class="cta-note">NDA takes under 5 minutes via DocuSign.</p>
+  </div>
+</div>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo-text">Mineora</a>
+    <ul class="footer-links">
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/how-it-works">How it works</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/terms">Terms</a></li>
+    </ul>
+    <div class="footer-legal">© 2026 1000175534 Ontario Ltd. · Loana Vanessa Danjoux</div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════
+     BRAND & LOGO DESIGN SYSTEM
+════════════════════════════════ -->
+<div class="design-chapter">
+  <div class="design-chapter-inner">
+
+    <div class="design-chapter-label">Brand Identity System</div>
+
+    <div style="margin-bottom:1.5rem;">
+      <h3 style="font-family:var(--sans);font-size:0.68rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-3);margin-bottom:1.5rem;">Logo — 3 Variants</h3>
+    </div>
+    <div class="logo-grid">
+
+      <!-- On white -->
+      <div class="logo-showcase">
+        <div class="cmc-logo">
+          <svg class="cmc-monogram" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="15.5" stroke="#E8E8E8" stroke-width="1"/>
+            <path d="M 27 11.5 A 11 11 0 1 0 27 24.5" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="1.8" fill="#0A0A0A"/>
+          </svg>
+          <div class="cmc-wordstack">
+            <span class="cmc-name">Mineora</span>
+            <span class="cmc-sub">Ontario, Canada</span>
+          </div>
+        </div>
+        <div class="logo-variant-label">Primary · Light</div>
+      </div>
+
+      <!-- On black -->
+      <div class="logo-showcase on-black">
+        <div class="cmc-logo">
+          <svg class="cmc-monogram" viewBox="0 0 36 36" fill="none">
+            <circle cx="18" cy="18" r="15.5" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <path d="M 27 11.5 A 11 11 0 1 0 27 24.5" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="1.8" fill="#FFFFFF"/>
+          </svg>
+          <div class="cmc-wordstack">
+            <span class="cmc-name">Mineora</span>
+            <span class="cmc-sub">Ontario, Canada</span>
+          </div>
+        </div>
+        <div class="logo-variant-label">Primary · Dark</div>
+      </div>
+
+      <!-- Monogram only / favicon -->
+      <div class="logo-showcase on-gray">
+        <svg width="64" height="64" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="15.5" stroke="#C8C8C8" stroke-width="1"/>
+          <path d="M 27 11.5 A 11 11 0 1 0 27 24.5" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="1.8" fill="#0A0A0A"/>
+        </svg>
+        <div class="logo-variant-label">Icon · Favicon</div>
+      </div>
+
+    </div>
+
+    <!-- Logo concept note -->
+    <div style="background:var(--white);border:1px solid var(--gray-5);border-radius:6px;padding:1.5rem 2rem;max-width:720px;margin-bottom:3rem;">
+      <div style="font-family:var(--sans);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-3);margin-bottom:0.75rem;">Mark Concept</div>
+      <p style="font-family:var(--sans);font-size:0.875rem;font-weight:300;color:var(--gray-2);line-height:1.75;">A <strong style="color:var(--black);font-weight:500">geometric arc</strong> inscribed in a precision circle — suggesting both movement and circumference (the shape of the earth, the arc of a deal closing). The center dot anchors focus. No gradients, no effects: the mark works at 16px as a favicon and at 400px on a business card. <strong style="color:var(--black);font-weight:500">Playfair Display Medium</strong> carries the wordmark — old-money serif confidence without being corporate.</p>
+    </div>
+
+    <!-- COLOR SYSTEM -->
+    <h3 style="font-family:var(--sans);font-size:0.68rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-3);margin-bottom:1.5rem;">Color Palette</h3>
+    <div class="swatch-row">
+      <div class="swatch">
+        <div class="swatch-block" style="background:#0A0A0A;"></div>
+        <div class="swatch-name">Black</div>
+        <div class="swatch-hex">#0A0A0A — Primary</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#1A1A1A;"></div>
+        <div class="swatch-name">Near Black</div>
+        <div class="swatch-hex">#1A1A1A — Hover</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#4A4A4A;"></div>
+        <div class="swatch-name">Charcoal</div>
+        <div class="swatch-hex">#4A4A4A — Headings</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#8A8A8A;border:1px solid #e8e8e8;"></div>
+        <div class="swatch-name">Mid Gray</div>
+        <div class="swatch-hex">#8A8A8A — Body copy</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#C8C8C8;border:1px solid #e8e8e8;"></div>
+        <div class="swatch-name">Light Gray</div>
+        <div class="swatch-hex">#C8C8C8 — Borders</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#E8E8E8;border:1px solid #e8e8e8;"></div>
+        <div class="swatch-name">Pale Gray</div>
+        <div class="swatch-hex">#E8E8E8 — Dividers</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#F5F5F5;border:1px solid #e8e8e8;"></div>
+        <div class="swatch-name">Off White</div>
+        <div class="swatch-hex">#F5F5F5 — Backgrounds</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#FFFFFF;border:1px solid #e8e8e8;"></div>
+        <div class="swatch-name">White</div>
+        <div class="swatch-hex">#FFFFFF — Page base</div>
+      </div>
+    </div>
+    <div style="background:var(--white);border:1px solid var(--gray-5);border-radius:6px;padding:1.25rem 1.75rem;max-width:720px;margin-bottom:3rem;">
+      <p style="font-family:var(--sans);font-size:0.82rem;font-weight:300;color:var(--gray-2);line-height:1.7;"><strong style="color:var(--black);font-weight:500">No accent color.</strong> This is the whole palette — pure grayscale. The restraint <em>is</em> the brand signal. When every mining competitor uses gold, copper, and earthy tones, a completely monochrome palette is the most unexpected and premium choice. Typography and negative space do all the work.</p>
+    </div>
+
+    <!-- TYPOGRAPHY -->
+    <h3 style="font-family:var(--sans);font-size:0.68rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-3);margin-bottom:0.5rem;">Typography</h3>
+
+    <div class="type-row">
+      <div class="type-meta"><strong>Display</strong>Playfair Display 400<br>56–80px · −0.02em</div>
+      <div style="font-family:var(--serif);font-size:3.5rem;font-weight:400;letter-spacing:-0.02em;color:var(--black);line-height:1.05;">Serious capital.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Headline</strong>Playfair Display 400<br>32–40px · −0.02em</div>
+      <div style="font-family:var(--serif);font-size:2.2rem;font-weight:400;letter-spacing:-0.02em;color:var(--black);">Active acquisitions, <em>available now.</em></div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Body</strong>Epilogue 300<br>16px · 1.75 leading</div>
+      <div style="font-family:var(--sans);font-size:1rem;font-weight:300;color:var(--gray-2);line-height:1.75;max-width:520px;">We broker direct acquisitions of certified mining properties across Mexico — connecting qualified international buyers with verified mine owners.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Label</strong>Epilogue 400<br>11px · 0.2em tracking<br>uppercase</div>
+      <div style="font-family:var(--sans);font-size:0.72rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray-3);display:flex;align-items:center;gap:0.75rem;"><span style="display:block;width:20px;height:1px;background:var(--gray-4);"></span>Active Portfolio</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Data</strong>Epilogue 500<br>14–16px · −0.01em</div>
+      <div style="font-family:var(--sans);font-size:1rem;font-weight:500;color:var(--black);">42.25 <span style="font-size:0.75rem;font-weight:300;color:var(--gray-3);">g/t Au · Mina Nikole · Lab Cert #514</span></div>
+    </div>
+
+    <!-- IMPLEMENTATION GUIDE -->
+    <div style="margin-top:3rem;">
+      <h3 style="font-family:var(--sans);font-size:0.68rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-3);margin-bottom:0.5rem;">Implementation Guide</h3>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <h3>🌐 Wix Studio Setup</h3>
+          <ul>
+            <li>Use <strong>Wix Studio</strong> — not the basic editor</li>
+            <li>Start from the "Blank" template</li>
+            <li>Import Google Fonts: Playfair Display + Epilogue</li>
+            <li>Set page max-width to 1080px, centered</li>
+            <li>Connect your domain in Domain Settings</li>
+            <li>Set body background to #FFFFFF, text to #0A0A0A</li>
+          </ul>
+        </div>
+        <div class="guide-card">
+          <h3>📐 Page Structure (v1)</h3>
+          <ul>
+            <li><strong>Home</strong> — hero, stats, portfolio table, process, CTA</li>
+            <li><strong>Portfolio</strong> — all 10 mines, filterable by mineral</li>
+            <li><strong>How It Works</strong> — process + FAQ</li>
+            <li><strong>About</strong> — Loana's bio + company credentials</li>
+            <li><strong>Contact / NDA</strong> — DocuSign embed or Wix form</li>
+            <li><strong>Privacy + Terms</strong> — legal compliance</li>
+          </ul>
+        </div>
+        <div class="guide-card">
+          <h3>✦ Design Rules</h3>
+          <ul>
+            <li>No accent colors — grayscale only</li>
+            <li>Playfair Display for all headings, no exceptions</li>
+            <li>Buttons: solid black, 4px radius, no gradients</li>
+            <li>Borders: 1px solid #E8E8E8 only</li>
+            <li>Min 80px top/bottom padding on every section</li>
+            <li>Data in Epilogue 500 — grades, prices, hectares</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
