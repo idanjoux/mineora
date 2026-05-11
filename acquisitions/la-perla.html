@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Property C — Confidential — Mineora</title>
-<meta name="description" content="Confidential acquisition file for Property C.">
+<title>Property J — Confidential — Mineora</title>
+<meta name="description" content="Confidential acquisition file for Property J.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet">
@@ -15,11 +15,11 @@
 :root {
   --ink: #0E0E0E; --ink-2: #2C2C2C; --ink-3: #5A5A5A; --ink-4: #8A8A8A;
   --rule: #D8D3CC; --rule-light: #EBEBEB;
-  --accent: #B8962E; --accent-pale: #F5EDD6;
-  --page: #FAFAF8; --page-2: #F3F0EA; --white: #FFFFFF;
+  --accent: #4A2D8B; --accent-pale: #E8E0F7;
+  --page: #FAFAF8; --page-2: #F0ECF8; --white: #FFFFFF;
 }
 html { font-size: 15px; }
-body { background: #E8E5DF; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+body { background: #DDD8EE; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
 .document { max-width: 860px; margin: 48px auto; background: var(--page); box-shadow: 0 4px 60px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.08); animation: fadeUp 0.5s ease both; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 .cover { background: var(--white); padding: 0; min-height: 640px; display: grid; grid-template-rows: auto 1fr auto; }
@@ -28,7 +28,7 @@ body { background: #E8E5DF; font-family: 'DM Sans', sans-serif; color: var(--ink
 .cover-badge { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 5px 12px; }
 .cover-meta { text-align: right; }
 .cover-meta .meta-label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-4); display: block; }
-.cover-meta .meta-val { font-size: 12px; font-weight: 400; color: var(--ink-3); display: block; margin-top: 3px; }
+.cover-meta .meta-val { font-size: 12px; color: var(--ink-3); display: block; margin-top: 3px; }
 .cover-body { padding: 52px 56px 0; }
 .cover-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 18px; }
 .cover-headline { font-family: 'DM Serif Display', serif; font-size: 64px; line-height: 1.0; color: var(--ink); letter-spacing: -1px; margin-bottom: 6px; }
@@ -59,6 +59,15 @@ body { background: #E8E5DF; font-family: 'DM Sans', sans-serif; color: var(--ink
 .snap-key { font-size: 11px; font-weight: 400; color: var(--ink-4); white-space: nowrap; flex-shrink: 0; }
 .snap-val { font-size: 12px; font-weight: 500; color: var(--ink); text-align: right; }
 .snap-val.highlight { color: var(--accent); font-family: 'DM Serif Display', serif; font-size: 15px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.data-table thead tr { border-bottom: 2px solid var(--ink); }
+.data-table th { font-size: 9.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-3); padding: 0 12px 10px; text-align: right; }
+.data-table th:first-child { text-align: left; padding-left: 0; }
+.data-table tbody td { padding: 9px 12px; text-align: right; color: var(--ink-2); font-weight: 300; border-bottom: 1px solid var(--rule-light); }
+.data-table tbody td:first-child { text-align: left; padding-left: 0; font-weight: 400; color: var(--ink); }
+.data-table .cat-row td { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); padding-top: 20px; padding-bottom: 6px; border-bottom: none; }
+.data-table .grand-row td { font-weight: 600; color: var(--accent); font-family: 'DM Serif Display', serif; font-size: 14px; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+.table-note { font-size: 11px; color: var(--ink-4); font-style: italic; margin-top: 10px; line-height: 1.5; }
 .highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 8px; }
 .hl-card { background: var(--white); padding: 24px 26px; }
 .hl-label { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
@@ -111,7 +120,7 @@ body { background: #E8E5DF; font-family: 'DM Sans', sans-serif; color: var(--ink
         <button type="submit" class="btn btn-primary">Unlock teaser →</button>
         <div id="gate-error" class="gate-error" aria-live="polite"></div>
       </form>
-      <div class="gate-meta">Property C · Project Zahav</div>
+      <div class="gate-meta">Property J · Project La Perla</div>
       <div style="margin-top: 32px; font-size: 12px;">
         <a href="../portfolio.html" style="color: var(--mid-gray);">← Back to portfolio</a>
       </div>
@@ -135,30 +144,30 @@ body { background: #E8E5DF; font-family: 'DM Sans', sans-serif; color: var(--ink
     </div>
   </div>
   <div class="cover-body">
-    <div class="cover-eyebrow">Project Zahav &nbsp;·&nbsp; Sonora, Mexico</div>
-    <h1 class="cover-headline">Gold &amp;<br><em>Silver</em></h1>
-    <p class="cover-deck">A geophysics-ready gold and silver exploration project east of Hermosillo, Sonora — held by Minecrons SA de CV, with completed well data, geological characterization, and a high-resolution geophysical program commissioned to define drilling targets.</p>
+    <div class="cover-eyebrow">Project La Perla &nbsp;·&nbsp; Zacatecas, Mexico</div>
+    <h1 class="cover-headline">Lithium<br>&amp; Critical<br><em>Minerals</em></h1>
+    <p class="cover-deck">An NI 43-101–certified lithium brine and sediment deposit in Villa de Cos, Zacatecas — with a drill-proven resource, granulometric recovery studies, and an independently assessed in-ground value of USD $15.175 billion. Located near the San Luis Potosí border, 400 hectares with full title documentation.</p>
     <div class="kpi-strip">
       <div class="kpi-cell">
-        <div class="kpi-value">Sonora</div>
-        <div class="kpi-label">Mexico's Premier<br>Gold State</div>
+        <div class="kpi-value">400 ha</div>
+        <div class="kpi-label">Concession Area<br>Full Title</div>
       </div>
       <div class="kpi-cell">
-        <div class="kpi-value">IP+Mag</div>
-        <div class="kpi-label">Geophysics Program<br>Commissioned</div>
+        <div class="kpi-value">NI 43-101</div>
+        <div class="kpi-label">Certified Resource<br>May 2013</div>
       </div>
       <div class="kpi-cell">
-        <div class="kpi-value">Well Data</div>
-        <div class="kpi-label">Existing Geological<br>Information</div>
+        <div class="kpi-value">26 Holes</div>
+        <div class="kpi-label">Diamond Drilling<br>Program Complete</div>
       </div>
       <div class="kpi-cell" style="background:var(--ink)">
-        <div class="kpi-value" style="color:var(--white)">Drill<br>Ready</div>
-        <div class="kpi-label" style="color:rgba(255,255,255,0.5)">Post-Geophysics<br>Targeting</div>
+        <div class="kpi-value" style="color:var(--white)">$15.2B</div>
+        <div class="kpi-label" style="color:rgba(255,255,255,0.5)">Est. In-Ground<br>Asset Value USD</div>
       </div>
     </div>
   </div>
   <div class="cover-footer">
-    <div class="cover-footer-loc">East of Hermosillo &nbsp;·&nbsp; Sonora State, Mexico</div>
+    <div class="cover-footer-loc">Villa de Cos &nbsp;·&nbsp; Zacatecas, Mexico &nbsp;·&nbsp; Near San Luis Potosí Border</div>
     <div class="cover-footer-disc">Asset identity disclosed only upon NDA execution. This document does not constitute an offer of securities or financial advice.</div>
   </div>
 </div>
@@ -168,7 +177,7 @@ body { background: #E8E5DF; font-family: 'DM Sans', sans-serif; color: var(--ink
 <div class="page-inner">
   <div class="nda-notice">
     <strong>Confidentiality Notice</strong>
-    The identity and location of this asset are withheld pending execution of a Non-Disclosure Agreement. The full data room — including well logs, geological characterization, geophysical proposals, and concession documentation — is available immediately thereafter.
+    The identity and location of this asset are withheld pending execution of a Non-Disclosure Agreement. The full data room — including NI 43-101 report, drill logs, granulometric studies, ownership escrituras, and financial valuation — is available immediately thereafter.
   </div>
   <div class="section-header">
     <span class="section-num">01</span>
@@ -176,22 +185,24 @@ body { background: #E8E5DF; font-family: 'DM Sans', sans-serif; color: var(--ink
   </div>
   <div class="two-col">
     <div>
-      <p class="body-text">Project Zahav is a <strong>gold and silver exploration asset</strong> located east of Hermosillo in Sonora State — Mexico's most prolific gold-producing state, home to assets operated by Fresnillo, Agnico Eagle, First Majestic, and dozens of active junior explorers. The property is held by <strong>Minecrons SA de CV</strong>, whose principals have engaged SeisGlobe Geoservices to conduct a combined high-resolution geophysical program using IP, magnetic, and well-integration methods to precisely characterize the gold-silver reserve structure and define priority drill targets.</p>
-      <p class="body-text">The property has existing <strong>borehole (well) data</strong> that will be integrated with the geophysical surveys to build a subsurface model of the deposit. The technical program — proposed by SeisGlobe (Reference LGG-0052-24, November 2024) — employs <strong>multi-method geophysical characterization</strong> including induced polarization (IP), magnetic surveys, and 3D geological modelling to identify drill-ready targets before the first hole is spudded.</p>
-      <p class="body-text">The asset represents an investment entry at a <strong>geophysics-program stage</strong> — between initial geological identification and first drilling — which historically offers the highest risk-adjusted return per exploration dollar for informed investors with technical capacity to evaluate the results.</p>
-      <p class="body-text" style="margin-top:20px; font-size:13px; color:var(--ink-4); font-style:italic;">Sonora is the most actively explored state in Mexico for gold and silver. With gold at $4,784/oz (May 2026) and Sonora's proven district-scale endowment, Project Zahav is entering the market at an ideal time for exploration capital deployment.</p>
+      <p class="body-text">Project La Perla is a <strong>lithium brine and sediment deposit</strong> located in Villa de Cos, Zacatecas — in the central-east of the state, very close to the San Luis Potosí border. The 400-hectare property (concession title 214110, "Los Potreros de la Laguna Blanca") is owned by <strong>José Francisco Alfaro Sousa</strong>, who holds full title via notarized escrituras (26240 and 26241) registered with the Registro Público de la Propiedad de Zacatecas. The property is <strong>free of encumbrances</strong> and available for immediate transfer.</p>
+      <p class="body-text">The asset is supported by an <strong>NI 43-101 Technical Report</strong> (Raúl Almaguer-Tapia, QP, May 2013) covering lithium resource estimates across three grade thresholds (200, 300, and 400 ppm), derived from a completed diamond drill program of <strong>26 holes</strong> with granulometric distribution and recovery studies. Multiple dry lake beds (Laguna Blanca, Calaguey, La Salada) adjacent to the property provide additional lithium brine potential beyond the current drilled envelope.</p>
+      <p class="body-text">An independent financial assessment (ACE Global B.V. MOA, March 2025) values the total in-ground assets at <strong>USD $15,175,993,679</strong> — based on the NI 43-101 resource combined with additional minerals (K, Na, Ca, Fe, Al, SiO₂) quantified in the 2025 updated analysis. The asset is being offered for sale or strategic partnership to qualified investors.</p>
+      <p class="body-text" style="margin-top:20px; font-size:13px; color:var(--ink-4); font-style:italic;">Zacatecas is an established Mexican mining jurisdiction with direct road access to the US border via federal highway. The property's proximity to the San Luis Potosí industrial corridor positions La Perla as a nearshoring-eligible lithium asset for North American battery supply chains.</p>
     </div>
     <div class="snapshot-panel">
       <div class="snapshot-head">Deal Snapshot</div>
-      <div class="snapshot-row"><span class="snap-key">Location</span><span class="snap-val">East Hermosillo, Sonora, Mexico</span></div>
-      <div class="snapshot-row"><span class="snap-key">Commodity</span><span class="snap-val">Gold · Silver</span></div>
-      <div class="snapshot-row"><span class="snap-key">Status</span><span class="snap-val">Geophysics-Stage Exploration</span></div>
-      <div class="snapshot-row"><span class="snap-key">Owner</span><span class="snap-val">Minecrons SA de CV</span></div>
-      <div class="snapshot-row"><span class="snap-key">Existing Data</span><span class="snap-val">Borehole / Well Logs</span></div>
-      <div class="snapshot-row"><span class="snap-key">Next Step</span><span class="snap-val">IP + Magnetic Geophysics</span></div>
-      <div class="snapshot-row"><span class="snap-key">Geophysics Program</span><span class="snap-val">SeisGlobe LGG-0052-24</span></div>
-      <div class="snapshot-row"><span class="snap-key">State</span><span class="snap-val">Sonora — Mexico's Gold State</span></div>
-      <div class="snapshot-row"><span class="snap-key">Deal Type</span><span class="snap-val highlight">JV / Acquisition</span></div>
+      <div class="snapshot-row"><span class="snap-key">Location</span><span class="snap-val">Villa de Cos, Zacatecas, Mexico</span></div>
+      <div class="snapshot-row"><span class="snap-key">Commodity</span><span class="snap-val">Lithium · K · Na · Ca · Fe · Al · SiO₂</span></div>
+      <div class="snapshot-row"><span class="snap-key">Deposit Type</span><span class="snap-val">Brine / Sediment (Dry Lake)</span></div>
+      <div class="snapshot-row"><span class="snap-key">Status</span><span class="snap-val">Advanced Exploration</span></div>
+      <div class="snapshot-row"><span class="snap-key">Concession</span><span class="snap-val">214110 · 400 ha · Free Title</span></div>
+      <div class="snapshot-row"><span class="snap-key">Technical Report</span><span class="snap-val">NI 43-101 (Almaguer-Tapia, May 2013)</span></div>
+      <div class="snapshot-row"><span class="snap-key">Drilling</span><span class="snap-val">26 Diamond Holes</span></div>
+      <div class="snapshot-row"><span class="snap-key">Access</span><span class="snap-val">Federal Highway · Railway 50 km</span></div>
+      <div class="snapshot-row"><span class="snap-key">Owner</span><span class="snap-val">José Francisco Alfaro Sousa</span></div>
+      <div class="snapshot-row"><span class="snap-key">In-Ground Value</span><span class="snap-val">USD $15.175B (2025 Assessment)</span></div>
+      <div class="snapshot-row"><span class="snap-key">Structures</span><span class="snap-val">Sale · JV · Monetization</span></div>
       <div class="snapshot-row"><span class="snap-key">Data Room</span><span class="snap-val">Under NDA</span></div>
     </div>
   </div>
@@ -203,56 +214,64 @@ body { background: #E8E5DF; font-family: 'DM Sans', sans-serif; color: var(--ink
 <div class="page-inner">
   <div class="section-header">
     <span class="section-num">02</span>
-    <h2 class="section-title">Key Competitive Advantages</h2>
+    <h2 class="section-title">Resource Summary</h2>
   </div>
-  <div class="highlights-grid">
-    <div class="hl-card">
-      <div class="hl-label">Sonora — Premier Jurisdiction</div>
-      <div class="hl-text">Sonora is Mexico's most active gold exploration state, with a long history of major discoveries and active operations by Fresnillo, Agnico Eagle, First Majestic, and numerous juniors. The regulatory environment is experienced, the geological framework is well-understood, and infrastructure from previous exploration cycles is widely available.</div>
-    </div>
-    <div class="hl-card">
-      <div class="hl-label">Geophysics-Guided Targeting</div>
-      <div class="hl-text">Rather than exploratory drilling, Project Zahav is employing SeisGlobe's combined IP, magnetic, and well-integration geophysical workflow to define high-confidence drill targets. This approach substantially improves hit probability and reduces the cost per discovery interval compared to blind drill programs.</div>
-    </div>
-    <div class="hl-card">
-      <div class="hl-label">Existing Well Data Integration</div>
-      <div class="hl-text">Pre-existing borehole data from the property will be integrated into the SeisGlobe geophysical model, providing a calibration point for subsurface interpretation that most early-stage exploration projects do not have. This reduces interpretation uncertainty and accelerates the path from geophysics to drill-ready targets.</div>
-    </div>
-    <div class="hl-card">
-      <div class="hl-label">Proximity to Hermosillo</div>
-      <div class="hl-text">The asset is located east of Hermosillo, Sonora's capital and industrial hub, providing straightforward access to logistics infrastructure, technical services, and labour markets. Proximity to a major city significantly reduces exploration operating costs versus remote Sonora properties.</div>
-    </div>
-    <div class="hl-card">
-      <div class="hl-label">Early Entry Valuation</div>
-      <div class="hl-text">Geophysics-stage assets offer the most leverage per exploration dollar — between geological identification and first drilling, the market has not yet assigned discovery value to the property. An incoming partner or acquirer gains the maximum proportion of any future resource value for the minimum initial capital commitment.</div>
-    </div>
-    <div class="hl-card">
-      <div class="hl-label">Experienced Operator</div>
-      <div class="hl-text">Minecrons SA de CV brings operational experience in the Sonora mining sector and has structured the exploration program with SeisGlobe — an established Mexican geophysical consultancy — to ensure the technical program meets international exploration standards for subsequent capital raising or asset monetization.</div>
-    </div>
-  </div>
+  <p class="body-text">The following resource data is drawn from the NI 43-101 Technical Report (Almaguer-Tapia, May 2013) and the 2021/2025 updated asset analysis. Lithium values reported in ppm from diamond drill cores and granulometric studies.</p>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="text-align:left">Category</th>
+        <th>Li Cut-Off (ppm)</th>
+        <th>Block Volume</th>
+        <th>Avg Li (ppm)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="cat-row"><td colspan="4">NI 43-101 Resource Blocks (Almaguer-Tapia, 2013)</td></tr>
+      <tr><td>Resource Block — Low Grade</td><td>&gt;200 ppm</td><td>See report</td><td>~200–300</td></tr>
+      <tr><td>Resource Block — Mid Grade</td><td>&gt;300 ppm</td><td>See report</td><td>~300–400</td></tr>
+      <tr><td>Resource Block — High Grade</td><td>&gt;400 ppm</td><td>See report</td><td>&gt;400</td></tr>
+      <tr class="cat-row"><td colspan="4">Select Drill Hole / Pit Sample Results (2021)</td></tr>
+      <tr><td>Sample 1179 (Pit M-A area)</td><td>—</td><td>—</td><td>682</td></tr>
+      <tr><td>Sample 1178</td><td>—</td><td>—</td><td>523</td></tr>
+      <tr><td>Drill Hole M8 (Granulometric)</td><td>—</td><td>—</td><td>541 (charola)</td></tr>
+      <tr><td>Drill Hole M5 (Granulometric)</td><td>—</td><td>—</td><td>447 (charola)</td></tr>
+      <tr class="cat-row"><td colspan="4">In-Ground Value (2025 Multi-Mineral Assessment)</td></tr>
+      <tr class="grand-row"><td>Total Asset Value (Li + K + Na + Ca + Fe + Al + SiO₂)</td><td>—</td><td>400 ha</td><td>USD $15.175B</td></tr>
+    </tbody>
+  </table>
+  <p class="table-note">Source: NI 43-101 Technical Report, La Perla Lithium Project (Almaguer-Tapia, May 2013); La Perla asset summary (Jolusaba, 2021); ACE Global B.V. MOA valuation table (March 18, 2025). Resource blocks per NI 43-101 report figures 29–38. In-ground value at current market prices for all minerals.</p>
 
   <div class="section-divider"></div>
 
   <div class="section-header">
     <span class="section-num">03</span>
-    <h2 class="section-title">Exploration Program</h2>
+    <h2 class="section-title">Key Competitive Advantages</h2>
   </div>
-  <div class="econ-row">
-    <div class="econ-cell">
-      <div class="econ-scenario">Geophysics Phase</div>
-      <div class="econ-figure">IP + Mag</div>
-      <div class="econ-desc">SeisGlobe LGG-0052-24 program: induced polarization, magnetic survey, 3D modelling integrated with well logs to precisely characterize the gold-silver reserve structure and prioritize drill pads.</div>
+  <div class="highlights-grid">
+    <div class="hl-card">
+      <div class="hl-label">NI 43-101 Certified Resource</div>
+      <div class="hl-text">A fully compliant NI 43-101 Technical Report was prepared by Raúl Almaguer-Tapia, QP (AIMMGM 124, CIM 160023) in May 2013, covering three resource categories at 200, 300, and 400 ppm Li cut-off grades. This institutional-quality certification is the foundation for any financing, partnership, or acquisition process.</div>
     </div>
-    <div class="econ-cell">
-      <div class="econ-scenario">Drill Phase</div>
-      <div class="econ-figure">Post-Geo</div>
-      <div class="econ-desc">Phase I drilling to be designed from geophysical results. Target definition expected to produce 6–10 drill-ready locations across the characterized gold-silver structures.</div>
+    <div class="hl-card">
+      <div class="hl-label">$15.175B Multi-Mineral Value</div>
+      <div class="hl-text">A March 2025 independent valuation by ACE Global B.V. assessed the total in-ground asset value at USD $15,175,993,679, incorporating lithium alongside potassium, sodium, calcium, iron, aluminum, and silica — all confirmed in updated geochemical analysis. The multi-mineral profile transforms La Perla beyond a standard lithium play.</div>
     </div>
-    <div class="econ-cell">
-      <div class="econ-scenario">Timeline</div>
-      <div class="econ-figure">~12 mo.</div>
-      <div class="econ-desc">Geophysical data acquisition, processing, and 3D modelling estimated at 3–4 months. Phase I drill program design and execution targeting within 12 months of program start.</div>
+    <div class="hl-card">
+      <div class="hl-label">Clean Title — Free of Encumbrances</div>
+      <div class="hl-text">The property is registered under notarized escrituras (26240, 26241) before Notario Público No. 9 of Zacatecas, confirmed free of liens or legal challenges. Ownership certificates (Finanzas Nos. 68751–68754) were confirmed in December 2021. The concession is properly inscribed in the Registro Público de Minería.</div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-label">Dry Lake Brine Potential</div>
+      <div class="hl-text">Two dry lake beds adjacent to the property — Calaguey and La Salada — have been sampled and included in the NI 43-101 analysis. Dry lake (salar) deposits are among the highest-grade, most economically recoverable lithium sources globally, providing additional resource upside beyond the drilled sediment package.</div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-label">Federal Highway + Railway Access</div>
+      <div class="hl-text">The property sits 5 km from a federal highway and approximately 50 km from a railway gondola boarding area — the same logistical advantage highlighted at the Satevó lithium project. This infrastructure position is critical for cost-competitive lithium carbonate transport to US and Mexican battery manufacturers.</div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-label">Signed Intermediation Agreements</div>
+      <div class="hl-text">Multiple signed intermediation (brokerage) agreements are on file, including contracts with the Canadian Mining Consortium and ACE Global B.V. (Netherlands), evidencing active institutional interest and providing a structured commercial framework ready for immediate buyer engagement.</div>
     </div>
   </div>
 </div>
@@ -263,27 +282,52 @@ body { background: #E8E5DF; font-family: 'DM Sans', sans-serif; color: var(--ink
 <div class="page-inner">
   <div class="section-header">
     <span class="section-num">04</span>
+    <h2 class="section-title">Indicative Economics</h2>
+  </div>
+  <div class="econ-row">
+    <div class="econ-cell">
+      <div class="econ-scenario">In-Ground Value</div>
+      <div class="econ-figure">$15.2B</div>
+      <div class="econ-desc">Independent assessment (ACE Global B.V., March 2025) of total in-ground mineral value across Li, K, Na, Ca, Fe, Al, and SiO₂ at current market prices for all commodities.</div>
+    </div>
+    <div class="econ-cell">
+      <div class="econ-scenario">Price</div>
+      <div class="econ-figure">On Request</div>
+      <div class="econ-desc">Pricing available upon NDA execution and qualified investor review. Structured deal formats available including outright sale, JV, and asset monetization.</div>
+    </div>
+    <div class="econ-cell">
+      <div class="econ-scenario">Concession Valid</div>
+      <div class="econ-figure">To 2051</div>
+      <div class="hl-text" style="font-size:12px; font-weight:300; color:var(--ink-4); line-height:1.55;">Per the intermediation contract, the concession has a confirmed validity from August 10, 2001 to August 9, 2051 — providing 25+ years of remaining mine life for any development program.</div>
+    </div>
+  </div>
+  <p class="body-text" style="font-size:11.5px; color:var(--ink-4); font-style:italic; margin-top:0;">All figures in USD. In-ground value per ACE Global B.V. assessment (March 2025). Li price ~$11,000/mt; other mineral prices per current market rates. Figures indicative only and subject to independent verification during formal due diligence.</p>
+
+  <div class="section-divider"></div>
+
+  <div class="section-header">
+    <span class="section-num">05</span>
     <h2 class="section-title">Proposed Transaction</h2>
   </div>
-  <p class="body-text">The property is offered to qualified investors and mine developers seeking early-stage exposure to a geophysically-characterized gold-silver system in Mexico's premier exploration state:</p>
+  <p class="body-text">The owner seeks a strategic acquirer, JV partner, or monetization counterparty for the full asset. Pricing is available upon NDA execution and qualified investor review. The following structures are considered:</p>
   <div class="structure-items">
     <div class="structure-item">
-      <div class="si-label">Option A<br>Joint Venture</div>
-      <div class="si-body">Strategic JV with a qualified exploration company or mining fund. Partner funds and manages the geophysical program and Phase I drilling; Minecrons retains an operating or royalty interest. Preferred structure for partners bringing technical exploration capability.</div>
+      <div class="si-label">Option A<br>Outright Sale</div>
+      <div class="si-body">Full acquisition of 100% of the La Perla concession (214110), all three land escrituras, NI 43-101 report, drill data, and all associated documentation. Full title transfer via notarized deed. Preferred for buyers with immediate capital and operational capability.</div>
     </div>
     <div class="structure-item">
-      <div class="si-label">Option B<br>Outright Sale</div>
-      <div class="si-body">Full acquisition of the concessions and all data including geological characterization, borehole logs, and commissioned geophysical program documentation. Buyer assumes operational control from geophysics completion onward.</div>
+      <div class="si-label">Option B<br>Joint Venture</div>
+      <div class="si-body">Strategic JV with a qualified lithium developer or battery materials company. Owner retains a minority equity interest and royalty. Partner provides development capital, processing technology, and offtake relationships to advance the asset to production stage.</div>
     </div>
     <div class="structure-item">
-      <div class="si-label">Option C<br>Earn-In</div>
-      <div class="si-body">Earn-in arrangement granting majority interest upon completion of defined geophysics and Phase I drill milestones, with an NSR royalty retained by Minecrons. Ideal for a junior explorer seeking to grow a Sonora property position.</div>
+      <div class="si-label">Option C<br>Asset Monetization</div>
+      <div class="si-body">Structured asset monetization via special purpose company (SPC) arrangement for institutional investors, as per the ACE Global B.V. framework. Full documentation package, including corporate KYC, ownership proof, and valuation table, is prepared and available.</div>
     </div>
   </div>
   <div class="callout">
     <div class="callout-text">
       <div class="callout-head">Proceed to Full Data Room</div>
-      <div class="callout-sub">Execute the NDA to access borehole data, geological characterization reports, the SeisGlobe geophysical program proposal, and concession documentation.</div>
+      <div class="callout-sub">Execute the NDA to access the NI 43-101 Technical Report, drill hole logs, granulometric studies, ownership escrituras, financial valuation tables, and all intermediation documentation.</div>
     </div>
     <div class="callout-cta">Request NDA</div>
   </div>
@@ -291,7 +335,7 @@ body { background: #E8E5DF; font-family: 'DM Sans', sans-serif; color: var(--ink
 </div>
 
 <div class="doc-footer">
-  <div class="df-left">Project Zahav &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Confidential</div>
+  <div class="df-left">Project La Perla &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Confidential</div>
   <div class="df-right">This document is strictly confidential and is intended solely for the named recipient. It does not constitute an offer to sell or solicitation of an offer to buy any securities or assets. Any reproduction or disclosure without prior written consent is prohibited.</div>
 </div>
 

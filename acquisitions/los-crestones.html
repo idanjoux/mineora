@@ -1,42 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Los Crestones — Confidential — Mineora</title>
-  <meta name="description" content="Confidential acquisition file for Los Crestones." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property E — Confidential — Mineora</title>
+<meta name="description" content="Confidential acquisition file for Property E.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Teaser original stylesheets / links below -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink:        #0E0E0E; --ink-2: #2C2C2C; --ink-3: #5A5A5A; --ink-4: #8A8A8A;
+  --rule:       #D8D3CC; --rule-light: #EBEBEB;
+  --accent:     #B8962E; --accent-pale: #F5EDD6;
+  --page:       #FAFAF8; --page-2: #F3F0EA; --white: #FFFFFF;
+}
+html { font-size: 15px; }
+body { background: #E8E5DF; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.document { max-width: 860px; margin: 48px auto; background: var(--page); box-shadow: 0 4px 60px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.08); animation: fadeUp 0.5s ease both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.cover { background: var(--white); padding: 0; min-height: 640px; display: grid; grid-template-rows: auto 1fr auto; }
+.cover-topbar { height: 4px; background: var(--accent); }
+.cover-nav { padding: 36px 56px 0; display: flex; justify-content: space-between; align-items: flex-start; }
+.cover-badge { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 5px 12px; }
+.cover-meta { text-align: right; }
+.cover-meta .meta-label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-4); display: block; }
+.cover-meta .meta-val { font-size: 12px; font-weight: 400; color: var(--ink-3); display: block; margin-top: 3px; }
+.cover-body { padding: 52px 56px 0; }
+.cover-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 18px; }
+.cover-headline { font-family: 'DM Serif Display', serif; font-size: 64px; line-height: 1.0; color: var(--ink); letter-spacing: -1px; margin-bottom: 6px; }
+.cover-headline em { font-style: italic; color: var(--accent); }
+.cover-deck { font-size: 15px; font-weight: 300; color: var(--ink-3); line-height: 1.6; max-width: 480px; margin: 20px 0 44px; }
+.kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+.kpi-cell { padding: 22px 24px 20px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.kpi-value { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+.kpi-label { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); line-height: 1.4; }
+.cover-footer { padding: 20px 56px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule-light); }
+.cover-footer-loc { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); display: flex; align-items: center; gap: 8px; }
+.cover-footer-loc::before { content: ''; display: inline-block; width: 16px; height: 1px; background: var(--accent); }
+.cover-footer-disc { font-size: 10px; color: var(--ink-4); font-style: italic; max-width: 360px; text-align: right; line-height: 1.5; }
+.page { background: var(--white); border-top: 8px solid var(--page-2); }
+.page-inner { padding: 56px 56px 64px; }
+.nda-notice { background: var(--accent-pale); border-left: 3px solid var(--accent); padding: 12px 18px; margin-bottom: 48px; font-size: 12px; color: var(--ink-2); line-height: 1.5; }
+.nda-notice strong { font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; font-size: 10px; display: block; margin-bottom: 3px; }
+.section-header { display: flex; align-items: baseline; gap: 20px; margin-bottom: 36px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+.section-num { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); flex-shrink: 0; }
+.section-title { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--ink); letter-spacing: -0.3px; }
+.body-text { font-size: 14px; font-weight: 300; color: var(--ink-2); line-height: 1.75; margin-bottom: 16px; }
+.body-text strong { font-weight: 500; color: var(--ink); }
+.two-col { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: start; }
+.snapshot-panel { background: var(--page-2); border: 1px solid var(--rule); }
+.snapshot-head { padding: 14px 20px; border-bottom: 1px solid var(--rule); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-3); }
+.snapshot-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 20px; border-bottom: 1px solid var(--rule-light); gap: 12px; }
+.snapshot-row:last-child { border-bottom: none; }
+.snap-key { font-size: 11px; font-weight: 400; color: var(--ink-4); white-space: nowrap; flex-shrink: 0; }
+.snap-val { font-size: 12px; font-weight: 500; color: var(--ink); text-align: right; }
+.snap-val.highlight { color: var(--accent); font-family: 'DM Serif Display', serif; font-size: 15px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.data-table thead tr { border-bottom: 2px solid var(--ink); }
+.data-table th { font-size: 9.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-3); padding: 0 12px 10px; text-align: right; }
+.data-table th:first-child { text-align: left; padding-left: 0; }
+.data-table tbody td { padding: 9px 12px; text-align: right; color: var(--ink-2); font-weight: 300; border-bottom: 1px solid var(--rule-light); }
+.data-table tbody td:first-child { text-align: left; padding-left: 0; font-weight: 400; color: var(--ink); }
+.data-table .cat-row td { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); padding-top: 20px; padding-bottom: 6px; border-bottom: none; }
+.data-table .total-row td { font-weight: 600; color: var(--ink); border-bottom: 2px solid var(--rule); border-top: 1px solid var(--rule); }
+.data-table .grand-row td { font-weight: 600; color: var(--accent); font-family: 'DM Serif Display', serif; font-size: 14px; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+.table-note { font-size: 11px; color: var(--ink-4); font-style: italic; margin-top: 10px; line-height: 1.5; }
+.highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 8px; }
+.hl-card { background: var(--white); padding: 24px 26px; }
+.hl-label { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.hl-label::before { content: ''; display: inline-block; width: 18px; height: 2px; background: var(--accent); flex-shrink: 0; }
+.hl-text { font-size: 13px; font-weight: 300; color: var(--ink-3); line-height: 1.65; }
+.econ-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 24px 0 16px; }
+.econ-cell { background: var(--white); padding: 28px 24px; position: relative; }
+.econ-cell::after { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 32px; background: var(--accent); }
+.econ-scenario { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 12px; }
+.econ-figure { font-family: 'DM Serif Display', serif; font-size: 34px; color: var(--ink); line-height: 1; margin-bottom: 10px; }
+.econ-desc { font-size: 12px; font-weight: 300; color: var(--ink-4); line-height: 1.55; }
+.structure-items { display: grid; gap: 2px; margin-top: 8px; }
+.structure-item { display: grid; grid-template-columns: 160px 1fr; border: 1px solid var(--rule); }
+.si-label { background: var(--page-2); padding: 18px 20px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-3); display: flex; align-items: center; border-right: 1px solid var(--rule); }
+.si-body { padding: 18px 24px; font-size: 13px; font-weight: 300; color: var(--ink-2); line-height: 1.6; display: flex; align-items: center; }
+.callout { background: var(--ink); padding: 28px 32px; margin-top: 32px; display: flex; align-items: center; gap: 32px; }
+.callout-text { flex: 1; }
+.callout-head { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--white); margin-bottom: 6px; }
+.callout-sub { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.55; }
+.callout-cta { background: var(--accent); color: var(--white); padding: 12px 24px; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; cursor: default; }
+.doc-footer { background: var(--page-2); border-top: 1px solid var(--rule); padding: 18px 56px; display: flex; justify-content: space-between; align-items: center; }
+.df-left { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-4); }
+.df-right { font-size: 10px; color: var(--ink-4); font-style: italic; text-align: right; max-width: 420px; line-height: 1.5; }
+.section-divider { height: 1px; background: var(--rule-light); margin: 52px 0; }
+</style>
+<!-- Site stylesheet loaded AFTER teaser CSS so the gate renders in Mineora style -->
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+  /* When unlocked, restore the teaser's intended background and font on body. */
+  body.teaser-unlocked { background: #DDE5EA !important; font-family: 'DM Sans', sans-serif !important; }
+  /* Keep the gate using the site's body styling when locked (default). */
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a href="../index.html" class="brand">
-        <svg class="brand-mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="16" r="14" fill="none" stroke="#0A0A0A" stroke-width="1.2"/>
-          <path d="M 6 22 A 12 12 0 0 1 26 14" fill="none" stroke="#0A0A0A" stroke-width="1.4"/>
-          <circle cx="16" cy="16" r="1.6" fill="#0A0A0A"/>
-        </svg>
-        <span class="brand-text">
-          <span class="brand-name">Mineora</span>
-          <span class="brand-sub">Mine Brokerage · Ontario, Canada</span>
-        </span>
-      </a>
-      <nav class="site-nav">
-        <a href="../portfolio.html">Portfolio</a>
-        <a href="../how-it-works.html">Process</a>
-        <a href="../about.html">About</a>
-        <a href="../contact.html">Contact</a>
-      </nav>
-      <div class="header-cta">
-        <a href="../signin.html" class="btn btn-secondary">Sign in</a>
-        <a href="../contact.html" class="btn btn-primary">Request access</a>
-      </div>
-      <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-    </div>
-  </header>
+
   <!-- Password gate -->
   <div id="acq-gate" class="gate" style="display:none;">
     <div class="gate-card">
@@ -48,159 +115,257 @@
       </svg>
       <span class="eyebrow">Confidential — NDA</span>
       <h2>Restricted property file</h2>
-      <p>This acquisition file is available to qualified buyers under active NDA. Enter your access code to continue.</p>
+      <p>This investment teaser is available to qualified buyers under active NDA. Enter your access code to continue.</p>
       <form id="gate-form" class="gate-form" autocomplete="off">
-        <input id="gate-input" class="gate-input" type="password" placeholder="Access code" autocomplete="off" autocapitalize="off" spellcheck="false" />
-        <button type="submit" class="btn btn-primary">Unlock file →</button>
+        <input id="gate-input" class="gate-input" type="password" placeholder="Access code" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <button type="submit" class="btn btn-primary">Unlock teaser →</button>
         <div id="gate-error" class="gate-error" aria-live="polite"></div>
       </form>
-      <div class="gate-meta">Los Crestones · Exploration</div>
+      <div class="gate-meta">Property E · Project Corona</div>
+      <div style="margin-top: 32px; font-size: 12px;">
+        <a href="../portfolio.html" style="color: var(--mid-gray);">← Back to portfolio</a>
+      </div>
     </div>
   </div>
-  <!-- Acquisition content -->
+
+  <!-- Teaser content (unlocked) -->
   <div id="acq-content" style="display:none;">
+    <div style="position: fixed; top: 16px; left: 16px; z-index: 50;">
+      <a href="../portfolio.html" style="background: rgba(255,255,255,0.95); color: #0A0A0A; font-family: 'Epilogue', sans-serif; font-size: 12px; padding: 8px 14px; border: 1px solid #0A0A0A; text-decoration: none; letter-spacing: 0.05em;">← Back to portfolio</a>
+    </div>
+<div class="document">
 
-    <section class="acq-hero">
-      <div class="container">
-        <a href="../portfolio.html" class="acq-back">← Back to portfolio</a>
-        <div class="acq-title">
-          <div>
-            <span class="eyebrow">Acquisition file</span>
-            <h1>Los Crestones</h1>
-            <div class="location">Badiraguato, Sinaloa</div>
-          </div>
-          <div class="acq-status">
-            <span class="stage-pill">Exploration</span>
-            <span>File reference · LOS-CRESTONES</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section style="padding:0;">
-      <div class="container">
-        <div class="acq-meta-bar">
-          <div class="acq-meta-item">
-            <span class="acq-meta-label">Mineral</span>
-            <span class="acq-meta-value">Gold · Silver</span>
-          </div>
-          <div class="acq-meta-item">
-            <span class="acq-meta-label">Key metric</span>
-            <span class="acq-meta-value">NI 43-101 certified</span>
-          </div>
-          <div class="acq-meta-item">
-            <span class="acq-meta-label">Stage</span>
-            <span class="acq-meta-value">Exploration</span>
-          </div>
-          <div class="acq-meta-item">
-            <span class="acq-meta-label">Asking</span>
-            <span class="acq-meta-value">TBD NDA</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section style="padding-top:0;">
-      <div class="container">
-        <div class="acq-body">
-          <div>
-            <div class="acq-section">
-              <span class="eyebrow">Overview</span>
-              <h3>Property summary</h3>
-              <div class="placeholder-box">
-                <strong>[ Placeholder — property summary ]</strong>
-                Replace this block with a 2–3 paragraph overview of Los Crestones: history, ownership, concession status, and strategic context.
-              </div>
-            </div>
-
-            <div class="acq-section">
-              <span class="eyebrow">Geology</span>
-              <h3>Geology &amp; mineralization</h3>
-              <div class="placeholder-box">
-                <strong>[ Placeholder — geology ]</strong>
-                Describe host rock, structural controls, mineralization style, and the size and orientation of known zones. Reference any NI 43-101 documentation.
-              </div>
-            </div>
-
-            <div class="acq-section">
-              <span class="eyebrow">Lab data</span>
-              <h3>Assay &amp; certification</h3>
-              <div class="placeholder-box">
-                <strong>[ Placeholder — assay data ]</strong>
-                Insert summary of assay certificates, lab name(s), sample counts, and headline grades. Attach or link to certificate PDFs.
-              </div>
-            </div>
-
-            <div class="acq-section">
-              <span class="eyebrow">Infrastructure</span>
-              <h3>Access &amp; infrastructure</h3>
-              <div class="placeholder-box">
-                <strong>[ Placeholder — infrastructure ]</strong>
-                Road access, water, power, nearest town, distance to processing facilities, and any existing surface or underground works.
-              </div>
-            </div>
-
-            <div class="acq-section">
-              <span class="eyebrow">Deal structure</span>
-              <h3>Transaction</h3>
-              <div class="placeholder-box">
-                <strong>[ Placeholder — deal structure ]</strong>
-                Asset vs. share sale, asking price, deposit terms, royalty or earn-in structures, exclusivity period, and broker fee.
-              </div>
-            </div>
-          </div>
-
-          <aside class="acq-aside">
-            <div class="aside-card">
-              <h4>File at a glance</h4>
-              <ul class="aside-list">
-                <li><span class="label">Property</span> <span>Los Crestones</span></li>
-                <li><span class="label">Location</span> <span>Badiraguato, Sinaloa</span></li>
-                <li><span class="label">Size</span> <span>—</span></li>
-                <li><span class="label">Mineral</span> <span>Gold · Silver</span></li>
-                <li><span class="label">Metric</span> <span>NI 43-101 certified</span></li>
-                <li><span class="label">Stage</span> <span>Exploration</span></li>
-                <li><span class="label">Asking</span> <span>TBD NDA</span></li>
-              </ul>
-              <div class="aside-cta">
-                <a href="../contact.html" class="btn btn-primary">Request full memorandum →</a>
-              </div>
-            </div>
-            <div class="aside-card" style="background:var(--off-white);">
-              <h4 style="margin-bottom:12px;">Next step</h4>
-              <p style="font-size:13px; line-height:1.7; color:var(--charcoal); margin:0;">Submit a written expression of interest. We'll arrange an introductory call with the owner's technical team within five business days.</p>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
+<div class="cover">
+  <div class="cover-topbar"></div>
+  <div class="cover-nav">
+    <div class="cover-badge">Strictly Confidential · NDA Required</div>
+    <div class="cover-meta">
+      <span class="meta-label">Document Type</span><span class="meta-val">Investment Teaser</span>
+      <span class="meta-label" style="margin-top:8px">Date</span><span class="meta-val">May 2026</span>
+    </div>
   </div>
-  <script src="../assets/js/gate.js"></script>
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <a href="../index.html" class="brand">
-          <svg class="brand-mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="16" r="14" fill="none" stroke="#0A0A0A" stroke-width="1.2"/>
-            <path d="M 6 22 A 12 12 0 0 1 26 14" fill="none" stroke="#0A0A0A" stroke-width="1.4"/>
-            <circle cx="16" cy="16" r="1.6" fill="#0A0A0A"/>
-          </svg>
-          <span class="brand-text"><span class="brand-name">Mineora</span></span>
-        </a>
-        <nav class="footer-nav">
-          <a href="../portfolio.html">Portfolio</a>
-          <a href="../how-it-works.html">How it works</a>
-          <a href="../about.html">About</a>
-          <a href="../privacy.html">Privacy</a>
-          <a href="../terms.html">Terms</a>
-        </nav>
+  <div class="cover-body">
+    <div class="cover-eyebrow">Project Corona &nbsp;·&nbsp; Sinaloa, Mexico</div>
+    <h1 class="cover-headline">Gold, Silver<br>&amp; <em>Copper</em></h1>
+    <p class="cover-deck">A Phase I-complete epithermal vein system in the Sierra Madre Occidental — NI 43-101 certified, drill-proven, and Phase II–ready, surrounded by producing and advanced-stage assets in one of Mexico's most prolific precious metals corridors.</p>
+    <div class="kpi-strip">
+      <div class="kpi-cell">
+        <div class="kpi-value">39 g/t</div>
+        <div class="kpi-label">Peak Gold Grade<br>Hole 11LD011</div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2026 1000175534 Ontario Ltd. · Loana Vanessa Danjoux</span>
-        <span>Ontario, Canada</span>
+      <div class="kpi-cell">
+        <div class="kpi-value">4,168 ha</div>
+        <div class="kpi-label">Mineral Claims<br>3 Titles</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-value">NI 43-101</div>
+        <div class="kpi-label">Certified<br>Nov 2012</div>
+      </div>
+      <div class="kpi-cell" style="background:var(--ink)">
+        <div class="kpi-value" style="color:var(--white)">Phase II</div>
+        <div class="kpi-label" style="color:rgba(255,255,255,0.5)">Seed Round<br>Ready</div>
       </div>
     </div>
-  </footer>
+  </div>
+  <div class="cover-footer">
+    <div class="cover-footer-loc">Sierra Madre Occidental &nbsp;·&nbsp; Badiraguato, Sinaloa, Mexico</div>
+    <div class="cover-footer-disc">Asset identity disclosed only upon NDA execution. This document does not constitute an offer of securities or financial advice.</div>
+  </div>
+</div>
+
+<!-- PAGE 1 -->
+<div class="page">
+<div class="page-inner">
+  <div class="nda-notice">
+    <strong>Confidentiality Notice</strong>
+    The identity and location of this asset are withheld pending execution of a Non-Disclosure Agreement. The full data room — including the NI 43-101 technical report, drill logs, assay data, and geological maps — is available immediately thereafter.
+  </div>
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Opportunity Overview</h2>
+  </div>
+  <div class="two-col">
+    <div>
+      <p class="body-text">Project Corona is a <strong>gold-silver-copper epithermal vein system</strong> located in Badiraguato Municipality, Sinaloa State, within the prolific Sierra Madre Occidental precious metals belt — the same geological corridor hosting McEwen Mining's El Gallo complex (566K oz Au M&amp;I) and Mincore's Tameapa porphyry Cu-Mo deposit.</p>
+      <p class="body-text">An <strong>18-hole, 2,618m NI 43-101 diamond drill program</strong> (Oct 2011, Malahoff &amp; Brittliffe, P.Geo.) was completed across three named vein systems — Bohemia, Indio, and Corona — with <strong>7 of 7 pads intersecting target structures</strong>. Best intercept: <strong>5m @ 39 g/t Au · 93.3 g/t Ag · 2.13% Cu</strong> (Hole 11LD011, Bohemia structure). Strike extent has been tested over 380m; the northern slope and depth remain entirely untested.</p>
+      <p class="body-text">No formal mineral resource estimate exists — <strong>all resource upside is uncommitted</strong>. The asset is Phase II-ready, requiring seed capital to complete a drill campaign across the Bohemia and Indio systems and establish a maiden NI 43-101 resource. The property is held by Astral Mining Corporation.</p>
+      <p class="body-text" style="margin-top:20px; font-size:13px; color:var(--ink-4); font-style:italic;">With gold at $4,784/oz and copper at multi-year highs, the mineral potential of an untested 930m strike on a proven epithermal system has rarely been more compelling for Phase II capital.</p>
+    </div>
+    <div class="snapshot-panel">
+      <div class="snapshot-head">Deal Snapshot</div>
+      <div class="snapshot-row"><span class="snap-key">Location</span><span class="snap-val">Badiraguato, Sinaloa, Mexico</span></div>
+      <div class="snapshot-row"><span class="snap-key">Commodity</span><span class="snap-val">Gold · Silver · Copper</span></div>
+      <div class="snapshot-row"><span class="snap-key">Deposit Type</span><span class="snap-val">Epithermal Vein / Breccia</span></div>
+      <div class="snapshot-row"><span class="snap-key">Mine Type</span><span class="snap-val">Underground Potential</span></div>
+      <div class="snapshot-row"><span class="snap-key">Status</span><span class="snap-val">Phase II Ready</span></div>
+      <div class="snapshot-row"><span class="snap-key">Drill Program</span><span class="snap-val">18 holes · 2,618m (Phase I)</span></div>
+      <div class="snapshot-row"><span class="snap-key">Vein Systems</span><span class="snap-val">Bohemia · Indio · Corona</span></div>
+      <div class="snapshot-row"><span class="snap-key">Technical Report</span><span class="snap-val">NI 43-101 (Nov 2012)</span></div>
+      <div class="snapshot-row"><span class="snap-key">Access</span><span class="snap-val">Road Access</span></div>
+      <div class="snapshot-row"><span class="snap-key">Deal Type</span><span class="snap-val highlight">Seed Round</span></div>
+      <div class="snapshot-row"><span class="snap-key">Data Room</span><span class="snap-val">Under NDA</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+<div class="page-inner">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Phase I Drill Results</h2>
+  </div>
+  <p class="body-text">The following intercepts are from the Phase I NI 43-101-compliant drill program completed October 2011. All down-hole lengths; true widths not established. Source: Malahoff &amp; Brittliffe, P.Geo., Astral Mining Corporation Technical Report, Nov 2012.</p>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="text-align:left">Hole</th>
+        <th style="text-align:left">Structure</th>
+        <th>Interval (m)</th>
+        <th>Au (g/t)</th>
+        <th>Ag (g/t)</th>
+        <th>Cu (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="cat-row"><td colspan="6">Bohemia Structure</td></tr>
+      <tr><td>11LD011</td><td>Bohemia</td><td>5.00</td><td>39.10</td><td>93.3</td><td>2.13</td></tr>
+      <tr><td>11LD011</td><td>Bohemia</td><td>0.70</td><td>41.60</td><td>256.0</td><td>5.24</td></tr>
+      <tr><td>11LD010</td><td>Bohemia</td><td>4.00</td><td>9.13</td><td>41.8</td><td>0.55</td></tr>
+      <tr class="cat-row"><td colspan="6">Indio Structure</td></tr>
+      <tr><td>11LD008</td><td>Indio</td><td>2.49</td><td>20.40</td><td>22.0</td><td>0.82</td></tr>
+      <tr><td>11LD006</td><td>Indio</td><td>1.09</td><td>0.24</td><td>1,230</td><td>8.91</td></tr>
+      <tr><td>11LD003</td><td>Indio</td><td>1.05</td><td>0.15</td><td>33.9</td><td>2.43</td></tr>
+      <tr class="cat-row"><td colspan="6">Surface Grab Samples</td></tr>
+      <tr class="grand-row"><td>Best Grab</td><td>Mina Nueva</td><td>—</td><td>60.3</td><td>—</td><td>&gt;1%</td></tr>
+    </tbody>
+  </table>
+  <p class="table-note">All intercepts are down-hole lengths and do not represent true widths. Source: NI 43-101 Technical Report Los Crestones, Nov 2012 (Malahoff &amp; Brittliffe). Best surface grab: 60.3 g/t Au with &gt;10,000 ppm Cu (Sample #986104, Mina Nueva). Metal prices as of May 2026: Au $4,784/oz; Cu ~$4.50/lb (USD spot).</p>
+
+  <div class="section-divider"></div>
+
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Key Competitive Advantages</h2>
+  </div>
+  <div class="highlights-grid">
+    <div class="hl-card">
+      <div class="hl-label">NI 43-101 Certified</div>
+      <div class="hl-text">A fully compliant NI 43-101 technical report was prepared by two independent qualified persons (Malahoff &amp; Brittliffe, P.Geo.) in November 2012. This is an exceptional de-risking credential for an early-stage asset in Mexico, eliminating a costly first step for incoming capital.</div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-label">100% Drill Success Rate</div>
+      <div class="hl-text">Seven of seven drill pads intersected target vein structures in the Phase I program — confirming grade, continuity, and spatial control of the vein system. Structural predictability is a key requirement for successful resource estimation and Phase II targeting.</div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-label">Producing District Neighbours</div>
+      <div class="hl-text">McEwen Mining's El Gallo (40 km SW, producing), Mincore's Tameapa Cu-Mo porphyry (20 km SE, PEA complete), and GoldGroup/DynaResource's San Jose de Gracia (60 km NW, NI 43-101 resource) confirm the district's geological productivity and investability.</div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-label">930m Untested Strike</div>
+      <div class="hl-text">The Indio vein system has been traced 930m on surface; Phase I tested only 380m of the strike length. The northern slope, and all depth extensions below current drill holes, are entirely untested — representing genuine uncommitted resource upside.</div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-label">Gold + Copper Co-Product</div>
+      <div class="hl-text">The Indio structure contains a massive chalcopyrite lens (1,230 g/t Ag, 8.91% Cu in one intercept) alongside gold mineralization, providing a polymetallic economics profile at a time when copper demand from electrification is at record levels.</div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-label">Historic Underground Workings</div>
+      <div class="hl-text">The Bohemia structure has 70m of historic underground development confirming early-period high-grade exploitation. Combined with Phase I drill results and surface grab samples of 60.3 g/t Au, this indicates exceptional near-surface grade concentration.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+<div class="page-inner">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Phase II Capital Requirement</h2>
+  </div>
+  <p class="body-text">Phase I is fully de-risked. The seed round funds a targeted Phase II drill program on the Bohemia and Indio structures, a maiden NI 43-101 mineral resource estimate, and advancing the asset toward a PEA or production decision.</p>
+  <div class="econ-row">
+    <div class="econ-cell">
+      <div class="econ-scenario">Phase II Drilling</div>
+      <div class="econ-figure">~$2–3M</div>
+      <div class="econ-desc">Targeted drill program on Bohemia and Indio systems, focusing on depth extensions and the 550m of untested Indio strike. Estimated 20–25 holes at 150–200m depth.</div>
+    </div>
+    <div class="econ-cell">
+      <div class="econ-scenario">Resource Estimate</div>
+      <div class="econ-figure">~$150K</div>
+      <div class="econ-desc">NI 43-101 compliant maiden mineral resource estimate to be commissioned on completion of Phase II drill program, unlocking institutional investment eligibility.</div>
+    </div>
+    <div class="econ-cell">
+      <div class="econ-scenario">Value Unlock</div>
+      <div class="econ-figure">PEA+</div>
+      <div class="econ-desc">A Phase II resource and PEA positions the asset for a junior listing, major acquisition, or production partnership — the three primary exit paths for assets in this corridor.</div>
+    </div>
+  </div>
+  <p class="body-text" style="font-size:11.5px; color:var(--ink-4); font-style:italic; margin-top:0;">All figures indicative. Capital requirement subject to detailed program design during due diligence. Metal prices: Au $4,784/oz · Ag ~$32/oz · Cu ~$4.50/lb (USD spot, May 2026).</p>
+
+  <div class="section-divider"></div>
+
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Proposed Transaction</h2>
+  </div>
+  <p class="body-text">The asset is offered to qualified investors for Phase II seed financing, with the following structures available:</p>
+  <div class="structure-items">
+    <div class="structure-item">
+      <div class="si-label">Option A<br>Seed Round</div>
+      <div class="si-body">Equity or convertible note seed financing for the Phase II drill program and maiden resource. Investor receives a direct equity stake in the property or operating entity, with participation rights in subsequent financing rounds.</div>
+    </div>
+    <div class="structure-item">
+      <div class="si-label">Option B<br>Option Agreement</div>
+      <div class="si-body">A paid option to acquire a majority or 100% interest in the concessions, exercisable upon completion of Phase II milestones. Provides investor protection while asset is being advanced to resource-estimate stage.</div>
+    </div>
+    <div class="structure-item">
+      <div class="si-label">Option C<br>Outright Acquisition</div>
+      <div class="si-body">Full acquisition of the mining concessions and all associated technical data, drill core, and NI 43-101 report. For well-capitalized buyers who wish to control Phase II design and execution directly.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="callout-text">
+      <div class="callout-head">Proceed to Full Data Room</div>
+      <div class="callout-sub">Execute the NDA to access the NI 43-101 technical report, drill logs, assay certificates, geological maps, and project concession documentation.</div>
+    </div>
+    <div class="callout-cta">Request NDA</div>
+  </div>
+</div>
+</div>
+
+<div class="doc-footer">
+  <div class="df-left">Project Corona &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Confidential</div>
+  <div class="df-right">This document is strictly confidential and is intended solely for the named recipient. It does not constitute an offer to sell or solicitation of an offer to buy any securities or assets. Any reproduction or disclosure without prior written consent is prohibited.</div>
+</div>
+
+</div>
+  </div>
+
+  <script src="../assets/js/gate.js"></script>
+  <script>
+    // When the gate unlocks, swap body background to teaser background.
+    (function() {
+      var obs = new MutationObserver(function() {
+        var c = document.getElementById('acq-content');
+        if (c && c.style.display !== 'none') {
+          document.body.classList.add('teaser-unlocked');
+        } else {
+          document.body.classList.remove('teaser-unlocked');
+        }
+      });
+      var c = document.getElementById('acq-content');
+      if (c) obs.observe(c, { attributes: true, attributeFilter: ['style'] });
+      // Also run once on load in case gate.js fires before observer attaches.
+      window.addEventListener('load', function() {
+        var c = document.getElementById('acq-content');
+        if (c && c.style.display !== 'none') {
+          document.body.classList.add('teaser-unlocked');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
